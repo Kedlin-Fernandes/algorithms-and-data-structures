@@ -8,8 +8,8 @@ void swap(int *a, int *b){
     *b = aux;
 }
 
-//separa o vetor na metade; retorna o indice do meio
-int particion (int *v, int left, int right){
+//separa o vetor no pivô; retorna o indice do meio
+int partition (int *v, int left, int right){
     int pivot = v[right];
     int j = left;
 
@@ -25,7 +25,7 @@ int particion (int *v, int left, int right){
 
 void quick_sort_recursive(int *v, int left, int right){
     if(left< right){
-        int pivot = particion(v, left, right);
+        int pivot = partition(v, left, right);
 
         quick_sort_recursive(v, left, pivot-1);
         quick_sort_recursive(v, pivot+1, right);
